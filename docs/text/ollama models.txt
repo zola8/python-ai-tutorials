@@ -1,0 +1,15 @@
+1. source (base) models
+    - text / base
+
+2. fine tunes
+    - chat (free form conversations, multiple questions, back and forth dialog)
+    - instruct (follow instructions based on a single prompt)
+    - code
+    - vision (multimodal) = text + other type
+
+3. embeddings (vector stores)
+
+
+------------------------------
+
+* they all trained based on different template

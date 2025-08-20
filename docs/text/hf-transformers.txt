@@ -1,0 +1,48 @@
+https://huggingface.co/learn/llm-course/chapter1/1
+
+- NLP (Natural Language Processing) is the broader field focused on enabling computers to understand, interpret, and generate human language.
+NLP encompasses many techniques and tasks such as sentiment analysis, named entity recognition, and machine translation.
+
+- LLMs (Large Language Models) are a powerful subset of NLP models characterized by their massive size, extensive training data,
+and ability to perform a wide range of language tasks with minimal task-specific training.
+Models like the Llama, GPT, or Claude series are examples of LLMs that have revolutionized what’s possible in NLP.
+
+- pipeline function (huggingface):
+    - high level API of transformers library
+    - pre-processing -> model -> post-processing
+    - pipeline() functions:
+        - sentiment-analysis
+        - sentiment-analysis with own labels
+        - text-generation
+        - text-classification
+        - summarization
+        - translation
+        - zero-shot-classification
+        - feature-extraction
+        - ner
+        - question-answering
+        + Image pipelines / Audio pipelines / Multimodal
+
+
+training models:
+    - accuracy: scratch models: 60-70%, fine-tuned models: 80%
+    - image recognition: labelling (supervised)
+    - text: self supervised
+        - common pretraining objective: guess the next word in the sentence (my name is ...)
+        - or predict the value of randomly masked words (my ... is Zoltan)
+
+transformer architecture:
+    - encoder, decoder, encoder-decoder
+    - input -> input embedding -> encoder (self-attention / bi-directional) -> decoder -> output
+    - encoder:
+        - embedding for each word - 1 vector / word
+            we begin by turning each input word into a vector using an embedding algorithm.
+        - embedding = feature vector = feature tensor
+        - 768 numbers (in vector) contains the meaning of the text
+        - self-attention mechanism
+            The encoder’s inputs first flow through a self-attention layer – a layer that helps the encoder look at other words in the input sentence as it encodes a specific word.
+            https://jalammar.github.io/illustrated-transformer/
+            - "The animal didn't cross the street because it was too tired"
+            What does “it” in this sentence refer to? Is it referring to the street or to the animal? It’s a simple question to a human, but not as simple to an algorithm.
+            When the model is processing the word “it”, self-attention allows it to associate “it” with “animal”.
+            self attention allows it to look at other positions in the input sequence for clues that can help lead to a better encoding for this word.

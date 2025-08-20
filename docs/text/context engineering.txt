@@ -1,0 +1,14 @@
+https://www.youtube.com/watch?v=4GiqzUHD5AA
+
+long run agents (tools, etc...) can cause context failures:
+    - context poisoning:    when a hallucination makes it into the context
+    - context distraction:  when the context overwhelms the training (eláraszt, túltelít)
+    - context confusion:    when superfluous context influences the response
+    - context clash:        when parts of the context disagree
+
+approaches:
+    - write context (save outside the context window)
+    - select context (pulling it into the context window)
+    - compressing context (retain the tokens required to perform the task)
+    - isolating context (splitting up)
+

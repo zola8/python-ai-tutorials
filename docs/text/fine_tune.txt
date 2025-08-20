@@ -1,0 +1,13 @@
+https://www.youtube.com/watch?v=pTaSDVz0gok
+
+fine-tuning model:
+    - taking a pre-trained model and teaching it to be better at your specific task
+    - example: hire a chef and training him on your recipes - not to hire someone and teach cooking from scratch completely
+    - feed examples on your specific use cases
+
+when:
+    - you need consistent format or style that prompt alone cannot achieve
+    - you have a lot of specific domain data the model just hasn't seen before
+    - reduce cost by using a smaller, specialized model instead of a massive, larger one
+
+1. gather correct data

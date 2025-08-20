@@ -1,0 +1,41 @@
+
+text -> store somewhere
+
+    - we cannot store as one continuous stream
+        because of the context size (conversation + documents > context size)
+        if document doesn't help, then why to store it?
+    - sending too much data to the model can confuse the model
+    - opposing viewpoints in multiple docs can cause ill effects (sometimes helps, usually doesn't)
+
+- we want to split up, chunk the text
+    - lot of options but no best solution
+    - split up by character count / tokens / words / paragraph / sections
+    - I may want to overlap the that each chunk shares
+    - so we want the most relevant chunks depending on our prompt
+
+- embeddings: numerical representation of the text
+    - we pass the chunk of text through a special embedding model, and that figures out the semantic meaning (which is represented by a vector with many dimension)
+    - all embedded text will end up being a vector of a certain length
+    - different model has different dimension, so if I change later something, I must re-embed all the chunks
+    - if vectors are the same length, mathematically easy to compare them and find the chunks closest to the meaning of the prompt
+    - when reaching thousands of chunks: scalability issues -> vector DB
+
+- vector DB:
+    - vector store with chunks stored in (embedding + source text)
+        - embedding: to find the most similar text
+        - source: we need to provide the raw text to the model in the prompt
+
+- build the prompt
+    - start with a question -> create an embedding from the question
+    - create query to the DB looking for the most similar chunks
+    - lot of results: they have ranking
+    - then "use the following information to answer the question" (build the prompt with the original query plus the chunks)
+    - and include the text from each chunk
+    - pass the whole long prompt to the model
+    - the rest is the same as every other interaction with the model
+
+- goal of RAG:
+    - models just understand text in the input prompt
+    - so the goal is to find the relevant chunks and include them into the prompt
+    - this makes the model know about things it didn't know about before
+

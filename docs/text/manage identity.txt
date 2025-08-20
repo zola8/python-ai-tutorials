@@ -1,0 +1,41 @@
+https://www.youtube.com/watch?v=wiU7VEvi1LM
+
+challenge:
+    - propagate identity
+    - what the user can do
+    - bad actor who impersonates you
+    - how do we trust identity?
+    - how do we accept transitive trust? (remote agent trust on my agent...)
+
+
+
+
+delegation patterns:
+    - no delegation
+            user <---> application <---> database
+
+    - trusted assertion: who is the user?
+            user <--->      identity provider <---> application     <---> database
+            user has privilege
+
+    - simple delegation
+            get a token
+
+            user <---> chatbot <---> router <---> another agent
+                     + identity provider
+
+    - on behalf of delegation
+
+    - multiple IDPs (identity providers)
+
+        ( company A agents )   <--->   ( company B agents )
+        separate IDPs are used in each company
+
+
+strategies:
+    - Oauth2 , OIDC (OpenID Connect) as standard
+    - introduce a concept for token exchange
+    - leverage: context, scope, audience
+    - connect our agents through APIs
+    - monitoring
+    

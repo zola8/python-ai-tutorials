@@ -1,0 +1,66 @@
+---------------------------------------------
+Andrej Karpathy: Software Is Changing (Again)
+https://www.youtube.com/watch?v=LCEmiRjPEtQ
+---------------------------------------------
+software 1.0: computer code that programs a computer
+    https://anvaka.github.io/map-of-github/#2/0/0
+
+software 2.0: weights which program neural networks
+    https://huggingface.co/spaces/Eliahu/Model-Atlas
+
+software 3.0: prompts which programs LLM
+
+---------------------------------------------
+
+- growing category of "new codes"
+- code 1.0 (will be) migrated to 2.0
+- LLM like a new operating system analogy:
+    LLM = core, CPU
+    context window (working memory) = memory
+    LLM is orchestrating memory and compute for problem solving
+    you can "download" app and run on other device
+    compute is still expensive -> forced to be used centralized in the cloud -> client interact with it over the network -> time sharing / batch
+    the personal computing revolution hasn't come yet as not economical but there are trying (Mac mini with ollama)
+    prompting = talking like via terminal (direct access)
+    GUI hasn't been invented yet
+    it is not in hands of government but all of us
+
+- psychology:
+    - simulation of people
+    - having encyclopedig knowledge (they can remember of everything)
+    - LLMs have cognitive deficit:
+        hallucinate,
+        no internal self knowledge exits,
+        jagged intelligence (problem solving intelligence)
+        anterograde amnesia = no continual learning, no equivalent of "sleep" to consolidate the knowledge, insight or expertise into weights
+                            = worker join to company, over the years he learns things, develop expertise over time
+                            = like a movie where the LLM caught in time loop and every single morning it restarts
+        gullibility = prompt injection risk
+    - so the question is: how do we work around their deficits and enjoy the superhuman power?
+
+- LLM integration into IDE (Cursor)
+    - package state into context window before calling LLM
+    - orchestrate and call multiple models (embedding our files under the hood)
+    - application specific GUI (as we work with text, you see the diffs)
+
+- Partial autonomy UX / cooperating with AI
+    - see photoshop, what does AI see from there? that app is made for human (lot of switches, clickable fields)
+    - how to design applications for UI?
+    - multiple agent communication with each other
+    - overreacting agents: when 10.000 code change comes instantly -> I want small incremental chunks
+    example:
+        - user to AI: hey teach me math! -> AI lost in the woods
+        - we need 2 apps, to teacher (create courses) and students (courses served)
+        - we have intermediate artifact: the course what we can validate (auditable)
+        - keep AI to leash, certain progression
+    - new consumers:
+        humans (GUI)
+        computers (APIs)
+        agents
+    - /llms.txt - instruction for agents on a website
+    - we need docs for LLM without bold text, without images... (not just for people) -> markdown docs? (/docs/llms.txt)
+    - replace click to (equivalent) curl, because LLM cannot take that action
+
+        https://gitingest.com/      - repo structure understandable for LLM
+        https://deepwiki.org/
+    - change only an URL and become understandable to LLM

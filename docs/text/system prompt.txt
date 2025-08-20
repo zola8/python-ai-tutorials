@@ -1,0 +1,10 @@
+https://www.youtube.com/watch?v=lpWSmKON_go
+
+- name of assistant
+- knowledge cut off
+- capabilities
+- interaction style
+- ethics
+- task handling
+- response format
+

@@ -29,7 +29,7 @@ This guide focuses on **PyCharm**, which we recommend for the best experience.
 1. Open **File → Settings → Project: `workshop-py` → Python Interpreter → Add Interpreter → Add Local Interpreter**  
 2. Select **Virtualenv Environment** and set the location to `.venv` inside your project directory.
 
-![PyCharm Virtual Environment Setup](docs/readme01.jpg)
+![PyCharm Virtual Environment Setup](docs/images/readme01.jpg)
 
 ##### Option B: Using the Command Line
 

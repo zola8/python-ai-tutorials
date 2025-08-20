@@ -1,0 +1,23 @@
+https://www.youtube.com/watch?v=iWY9bkqLgg4
+
+5:00
+currency change agent
+
+
+- agent card
+    - I will send my task if the user asking for currency exchange, because I cannot do it but the remote agent can do it
+    - status: in progress, can takes hours to do the job
+    - get notification (maybe I need more input to finish the task)
+    - continuous or not continuous connection
+    - status: completed, final response back + artifacts (text, images)
+
+
+localhost and 127.0.0.1 are only for outgoing connections.
+on your local system localhost does translate into 127.0.0.1, which will always be the IP address of the machine that you are currently using.
+For example, on your computer accessing 127.0.0.1 (or localhost) will just attempt to open a connection with your own computer (useful if you're hosting a local web server)
+
+0.0.0.0 is only used for listening (aka "bind") connections, and is a wildcard meaning "listen to all network interfaces on this machine"
+Meanwhile, 0.0.0.0 has a different use. On a server or any machine with more than 1 ip address, it can be used to refer to all of the IP addresses that the machine uses.
+For example, if you create a simple java application with a serverSocket,
+you may want the server socket to listen for incoming connections on all of the servers IP addresses. You would then set the server socket to listen on 0.0.0.0.
+
