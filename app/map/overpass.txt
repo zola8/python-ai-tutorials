@@ -1,0 +1,59 @@
+https://overpass-turbo.eu/
+
+- box = a UI-on adott terkepen mukodik, nekem kellene ezt elotte definialni
+
+https://www.reddit.com/r/openstreetmap/comments/t9i6rz/downloading_all_street_names_adress_number/
+
+Nominatim is designed to be a geocoding and reverse geocoding system
+rather than a general method of downloading data from OpenStreetMap and as such only a limited number of
+'special' phrases work - normally restricted to points of interest.
+
+---------------------------------------
+
+[out:csv(
+  name, lanes, maxspeed, surface
+  )];
+(
+  way[highway][name]
+  ({{bbox}});
+
+);
+
+out body geom;
+
+---------------------------------------
+
+[out:csv(name,"addr:housenumber","addr:street","addr:city","addr:postcode", ::lat, ::lon)][bbox:{{bbox}}];
+(
+  nwr[building];
+  nwr["addr:housenumber"];
+);
+out center;
+
+---------------------------------------
+https://stackoverflow.com/questions/73713743/how-can-i-obtain-all-of-the-street-names-under-a-polygon-in-overpass
+
+
+
+[out:csv ("name")][timeout:2500];
+
+way["highway"]["name"]
+    (poly:"51.5566 0.0763 51.5734 0.0724 51.5203 0.0293");
+out tags;
+
+
+
+way["highway"]["name"]
+    (poly:"51.5566 0.0763 51.5734 0.0724 51.5203 0.0293");
+out geom;
+
+---------------------------------------
+
+
+[out:json];
+area[name="Kaposvár"];
+way(area)[highway][name];
+(._;>;);
+out;
+
+---------------------------------------

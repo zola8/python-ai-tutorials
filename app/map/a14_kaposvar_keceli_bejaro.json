@@ -1,0 +1,100 @@
+{
+  "type": "way",
+  "id": 30544553,
+  "nodes": [
+    355916291,
+    355916280
+  ],
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "maxspeed": "50",
+    "name": "Keceli bejáró",
+    "oneway": "no",
+    "surface": "asphalt",
+    "turn:lanes:forward": "left;through"
+  }
+},
+{
+  "type": "way",
+  "id": 30555941,
+  "nodes": [
+    337609549,
+    337472955
+  ],
+  "tags": {
+    "created_by": "Potlatch 0.10f",
+    "highway": "residential",
+    "name": "Keceli bejáró"
+  }
+},
+{
+  "type": "way",
+  "id": 30555945,
+  "nodes": [
+    337472954,
+    337609549
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "residential",
+    "layer": "1",
+    "name": "Keceli bejáró"
+  }
+},
+{
+  "type": "way",
+  "id": 31199581,
+  "nodes": [
+    347129751,
+    8773849961,
+    347129752
+  ],
+  "tags": {
+    "highway": "service",
+    "name": "Keceli bejáró"
+  }
+},
+{
+  "type": "way",
+  "id": 31199812,
+  "nodes": [
+    347129752,
+    347129753
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "service",
+    "layer": "1",
+    "name": "Keceli bejáró"
+  }
+},
+{
+  "type": "way",
+  "id": 31199820,
+  "nodes": [
+    347129753,
+    337472955
+  ],
+  "tags": {
+    "highway": "service",
+    "name": "Keceli bejáró"
+  }
+},
+{
+  "type": "way",
+  "id": 31791173,
+  "nodes": [
+    355916291,
+    337472950,
+    337472952,
+    6534235870,
+    4039262898,
+    2320635924,
+    337472954
+  ],
+  "tags": {
+    "highway": "residential",
+    "name": "Keceli bejáró"
+  }
+},

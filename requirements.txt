@@ -6,4 +6,13 @@ langchain_ollama
 pydantic
 dotenv
 pandas
+
 pymongo
+
+geopandas
+geopandas[all]
+shapely
+pyproj
+pyogrio
+osmnx
+overpy
