@@ -1,0 +1,42 @@
+********************
+***** llama3.2 *****
+********************
+
+Email:  Thanks for finally getting back to me. I had almost forgotten we were working on this.
+Model predictions with different techniques:
+
+------ zero_shot_prompt: I would classify the tone of the email as POLITE.
+The language used is courteous and appreciative, with a hint of lightheartedness ("had almost forgotten"). The tone is also slightly apologetic, implying that the sender was patient and understanding while waiting for a response. Overall, the tone is friendly and non-confrontational, which suggests a polite demeanor.
+
+------ one_shot_prompt: Based on the email, I would classify the tone as RUDE.
+The phrase "I had almost forgotten" implies a sense of frustration and annoyance, which is not typically associated with polite or neutral tones. The use of the word "finally" also adds to the negative connotation, suggesting that the recipient's response was long overdue.
+
+------ few_shot_prompt: I would classify the tone of the email as POLITE.
+The language used is polite and appreciative, with phrases such as "Thanks for finally getting back to me" and "I had almost forgotten". The tone conveys a sense of gratitude and understanding, rather than frustration or annoyance.
+
+
+********************
+*****  gemma3  *****
+********************
+
+Email:  Thanks for finally getting back to me. I had almost forgotten we were working on this.
+Model predictions with different techniques:
+
+------ zero_shot_prompt: Tone: **POLITE**
+Here’s why:
+
+*   **“Thanks for finally getting back to me”** – This expresses gratitude, a polite sentiment.
+*   The slight frustration ("I had almost forgotten we were working on this") is delivered in a relatively mild way, not with anger or accusation.
+
+It leans towards polite because it acknowledges the delay but does so without being overly critical or demanding.
+
+------ one_shot_prompt: Tone: **RUDE**
+**Reasoning:** The phrase "finally getting back to me" implies frustration and impatience. It suggests the sender felt ignored or that the recipient was delaying a response unnecessarily.
+
+Here's why the other options aren't suitable:
+
+*   **POLITE:** The email doesn't express gratitude or consideration.
+*   **NEUTRAL:** The email contains a slightly negative sentiment.
+
+------ few_shot_prompt: Tone: RUDE
+**Reasoning:** While the "Thanks" starts politely, the phrase "I had almost forgotten we were working on this" implies frustration and impatience, shifting the tone towards rudeness.
