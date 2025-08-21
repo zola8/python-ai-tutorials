@@ -16,3 +16,5 @@ pyproj
 pyogrio
 osmnx
 overpy
+
+langgraph
