@@ -1,0 +1,45 @@
+https://github.com/LinkedInLearning/build-ai-agents-and-chatbots-with-langgraph-2021112
+https://www.linkedin.com/learning/build-ai-agents-and-chatbots-with-langgraph/what-is-react-25234395?u=2113185
+
+
+ReAct framework:
+    - reason + act upon
+    - popular framework to build AI agents
+    - iterative process of using LLMs to find answers to question
+
+    1. question from user
+    2. thought block
+            - analyze the question, decides the steps to execute
+            - output: list of steps or actions to execute
+    3. action block
+            - identify steps, execute them (AI agent executes tool calling) and obtain output
+    4. observation block
+            - validate if the result answers the user question
+            - if more thinking needs --> 2. thought block
+            - final answer to the user
+
+
+
+Node:
+    - a node is a place where logic is executed
+    - types:
+        - LLM node: analyze prompts, create action, review observation
+        - tool: execute tools
+        - action: invoke another agent
+        - logic: custom logic
+    - edge: connect nodes, passes control between nodes
+    - conditional edge: helps route requests based on conditional checks
+
+
+Multi agent systems:
+    - individual agents specialize in a specific task or domain
+    - agents collaborate and coordinate with each other to achieve the goal
+    - mimics how a team of humans collaborates on a given task
+    - enables separation-of-concerns and distributed design
+    - reusable building blocks (in-house, open source, third party)
+    - helps to build complex workflows
+
+routing agent:
+    - based on the incoming query, route the request to the appropriate agent
+    - classifying
+    - one way routing
