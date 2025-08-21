@@ -18,3 +18,4 @@ osmnx
 overpy
 
 langgraph
+langgraph_supervisor
