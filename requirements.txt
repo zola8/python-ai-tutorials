@@ -3,6 +3,7 @@ fastapi[standard]
 uvicorn
 langchain
 langchain_ollama
+langchain-community
 pydantic
 dotenv
 pandas
@@ -19,3 +20,6 @@ overpy
 
 langgraph
 langgraph_supervisor
+
+beeai-framework
+beeai-framework[duckduckgo]

@@ -1,0 +1,113 @@
+-----------------------------------------------------------
+llm = ChatModel.from_name("ollama:granite3.3:latest")
+-----------------------------------------------------------
+
+*** Workflow Procurement ***
+client_company: Company A
+contractor_company: Company B
+client_budget_file: budget_data.csv
+contract_file: contract.txt
+service_industry: landscaping
+
+
+
+-> Step 'Budget Advisor' has been completed with the following outcome.
+
+Based on the provided budget data, here are the key obligations, deliverables, and payment terms from the contract between Company A and Company B:
+
+**Obligations:**
+- Pay employee salaries amounting to $100,000.
+- Cover office rent of $50,000.
+- Invest in online advertising for $15,000.
+- Engage in print advertising with a budget of $10,000.
+- Spend on electricity and water utilities amounting to $7,000 combined.
+- Allocate funds for landscaping services worth $5,200.
+- Budget for janitorial services at $3,000.
+- Set aside money for maintenance and repairs costing up to $10,000.
+
+**Deliverables:**
+- Ensure employee salaries are met as per the agreed budget.
+- Maintain office rent payments within the allocated budget of $50,000.
+- Achieve targeted reach through online advertising within the $15,000 budget.
+- Meet print advertising objectives with the $10,000 allocation.
+- Control utility costs (electricity and water) to stay under the combined $7,000 budget.
+- Utilize landscaping services fully within the $5,200 budget.
+- Keep janitorial services expenses at or below $3,000.
+- Manage maintenance and repairs expenditure effectively under the $10,000 limit.
+
+**Payment Terms:**
+The budget data does not explicitly detail payment terms. However, it's implied that payments are made periodically (likely monthly) to cover each category as per actual spend, which sometimes falls short of the budgeted amount due to variances.
+
+
+
+-> Step 'Contract Synthesizer' has been completed with the following outcome.
+
+From the internal budget data for Company A, specifically the contract with Company B for landscaping services, here are the key points:
+
+**Key Obligations:**
+- The Contractor (Company B) is obligated to perform landscaping work at Company A's property in Delaware.
+- The Contractor must adhere to all applicable laws and regulations in Delaware.
+- Work should be completed in a professional and workmanlike manner.
+
+**Deliverables:**
+- Completion of the agreed-upon landscaping services as per the scope of work.
+- All necessary equipment and materials are to be provided by the Contractor.
+- The work must be carried out safely and professionally.
+
+**Payment Terms:**
+- Total payment for the landscaping work is $5,500.
+- Payment is due upon completion of the work.
+
+**Termination Clauses:**
+- Either party can terminate this contract with a [NUMBER] days' written notice.
+- In case of termination before completion, the Contractor will be paid for all work completed up to that point.
+
+This contract governs itself under Delaware state laws and represents the entire agreement between Company A and Company B. Any amendments require mutual written consent.
+
+
+
+-> Step 'Web Search' has been completed with the following outcome.
+
+Subject: Negotiation on Contract Terms for Landscaping Services
+
+Dear [Recipient's Name],
+
+I hope this message finds you well.
+
+As we continue to collaborate under our current contract for landscaping services, I would like to propose some adjustments that align with recent market trends and Company A's internal budget constraints. Our aim is to ensure a mutually beneficial agreement that respects both parties' interests.
+
+1. **Market Trend Analysis**: Recent data from DuckDuckGo indicates an industry shift towards sustainable landscaping practices, which could reduce long-term maintenance costs and enhance our property's environmental footprint. I propose incorporating eco-friendly materials and methods into our contract at no additional cost to Company A.
+
+2. **Budgetary Considerations**: Our internal budget analysis reveals a need for more precise financial planning. Given this, we suggest revising the total payment from $5,500 to $5,200, reflecting current market rates and our operational constraints. This adjustment would still allow Company B to achieve a fair profit margin.
+
+3. **Flexibility in Service Delivery**: To accommodate potential seasonal fluctuations affecting labor and material costs, we propose including a clause that allows for minor adjustments in the scope of work or schedule without penalty, provided both parties agree in writing.
+
+4. **Termination Clause Review**: Considering current economic uncertainties, we recommend revisiting the termination clauses to ensure they are balanced and reflective of our respective business needs. A reduction in the required notice period from [NUMBER] days to a more standard 15-day notice could be mutually advantageous.
+
+We value our partnership with Company B and believe these adjustments will strengthen our collaboration while navigating current market dynamics and budgetary realities.
+
+Please review these proposals at your earliest convenience. We are open to discussing these points further to reach an amicable agreement that serves both our interests.
+
+Thank you for considering our request. I look forward to your feedback and the opportunity to formalize these terms in writing.
+
+Best regards,
+[Your Name]
+[Your Position]
+Company A
+
+
+
+-> Step 'Procurement Advisor' has been completed with the following outcome.
+
+A formal email has been drafted and sent to Company B, proposing adjustments to the contract terms that consider recent market trends and Company A's internal budget constraints. The proposed changes include incorporating sustainable landscaping practices, revising the total payment to $5,200, introducing flexibility in service delivery, and reviewing termination clauses for mutual benefit.
+Final email:
+A formal email has been drafted and sent to Company B, proposing adjustments to the contract terms that consider recent market trends and Company A's internal budget constraints. The proposed changes include incorporating sustainable landscaping practices, revising the total payment to $5,200, introducing flexibility in service delivery, and reviewing termination clauses for mutual benefit.
+
+
+-----------------------------------------------------------
+difference:
+https://www.ibm.com/think/tutorials/build-multi-agent-contract-management-system-beeai-framework#2102599119
+
+The final answer has been sent to Company B, proposing a revised total payment of USD 4,800 upon completion of the work, reflecting a 12% reduction. The proposal also includes a reduced scope of work and an extended project timeline.
+
+We can also see that the negotiation utilizes market trends in landscaping to the client's benefit as well. Finally, the revised total payment of USD 4,800 proposed in the email falls within the client's landscaping budget of USD 5,200. This looks great!
