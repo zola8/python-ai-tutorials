@@ -21,3 +21,7 @@ Meanwhile, 0.0.0.0 has a different use. On a server or any machine with more tha
 For example, if you create a simple java application with a serverSocket,
 you may want the server socket to listen for incoming connections on all of the servers IP addresses. You would then set the server socket to listen on 0.0.0.0.
 
+------------------------------------------------------------
+https://google.github.io/adk-docs/a2a/quickstart-exposing/#getting-the-sample-code          - folder structure
+https://a2aprotocol.ai/docs/guide/a2a-number-guessing-game                                  - a2a game with 3 agents
+https://github.com/theailanguage/a2a_samples                                                - a2a, mcp
