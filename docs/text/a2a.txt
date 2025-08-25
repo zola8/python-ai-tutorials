@@ -25,3 +25,23 @@ you may want the server socket to listen for incoming connections on all of the 
 https://google.github.io/adk-docs/a2a/quickstart-exposing/#getting-the-sample-code          - folder structure
 https://a2aprotocol.ai/docs/guide/a2a-number-guessing-game                                  - a2a game with 3 agents
 https://github.com/theailanguage/a2a_samples                                                - a2a, mcp
+
+https://github.com/a2aproject/a2a-samples/tree/main/samples/python/agents/helloworld        - google a2a
+
+------------------------------------------------------------
+https://deeplearningdispatch.com/2025/08/16/running-multiple-a2a-agents-on-a-single-server/
+
+The Problem: One Server, One Agent Limitation
+Traditionally, A2A implementations have been constrained by a “one agent per server” model. This limitation stems from how agents are typically served and discovered within the A2A ecosystem. Developers who wanted to deploy multiple specialized agents had to:
+
+    Set up multiple servers – increasing infrastructure costs
+    Use different ports – complicating network configuration
+    Manage separate deployments – multiplying maintenance overhead
+
+Multiple Agents, One Host
+Imagine running three different agents on the same server:
+
+Agent Type	                Purpose	Agent                   Card URL
+Conversational Agent	    General conversation and Q&A	http://localhost:8000/a2a/conversation/agent-card.json
+Trending Topics Agent	    Real-time trend analysis	    http://localhost:8000/a2a/trending/agent-card.json
+Analyzer Agent	            Data analysis and insights	    http://localhost:8000/a2a/analyzer/agent-card.json
