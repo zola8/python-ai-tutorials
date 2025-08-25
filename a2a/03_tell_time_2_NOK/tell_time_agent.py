@@ -2,6 +2,7 @@ from datetime import datetime
 
 from a2a.types import AgentCapabilities, AgentCard, AgentSkill, TransportProtocol
 from google.adk.agents import LlmAgent
+from google.adk.models.lite_llm import LiteLlm
 
 TELLTIME_AGENT_INSTRUCTIONS = """
 You are a TellTime Agent.
@@ -18,7 +19,7 @@ def current_time_tool():
 
 def get_telltime_agent(model: str) -> LlmAgent:
     return LlmAgent(
-        model=model,
+        model=LiteLlm(model=model),
         name="telltime_agent",
         description="An AI agent which tells the current time",
         instruction=TELLTIME_AGENT_INSTRUCTIONS,
