@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
 AGENT_BASE_URL = "localhost:8080"
-MODEL_NAME = "llama3.2"
+MODEL_NAME = "ollama_chat/llama3.2"
 
 app: FastAPI = FastAPI(
     title="Run multiple agents on single host using A2A protocol.",
