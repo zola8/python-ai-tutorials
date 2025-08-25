@@ -27,3 +27,5 @@ beeai-framework[duckduckgo]
 a2a-sdk
 a2a-sdk[http-server]
 google-adk
+python-a2a
+python-a2a[ollama]
