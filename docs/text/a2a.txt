@@ -45,3 +45,14 @@ Agent Type	                Purpose	Agent                   Card URL
 Conversational Agent	    General conversation and Q&A	http://localhost:8000/a2a/conversation/agent-card.json
 Trending Topics Agent	    Real-time trend analysis	    http://localhost:8000/a2a/trending/agent-card.json
 Analyzer Agent	            Data analysis and insights	    http://localhost:8000/a2a/analyzer/agent-card.json
+------------------------------------------------------------
+https://www.youtube.com/watch?v=mFkw3p5qSuA  - Agent2Agent (A2A) Crash Course: Full Walkthrough With Real Multi-Agent Examples
+https://github.com/bhancockio/agent2agent/tree/main/a2a_friend_scheduling
+https://youtu.be/mFkw3p5qSuA?si=z5A8beLPnXqiQUQs&t=2406
+
+client <--> 1. fetch agent card                 <-->    A2A Starlette application / Server
+            2. analyze agent card                           Agent Executor
+            3. build & send message request                     Agent
+            4. print agent response
+
+------------------------------------------------------------
