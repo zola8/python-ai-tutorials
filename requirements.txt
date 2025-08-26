@@ -23,10 +23,11 @@ langgraph_supervisor
 
 beeai-framework
 beeai-framework[duckduckgo]
-
 a2a-sdk
 a2a-sdk[http-server]
 google-adk
 litellm
 python-a2a
 python-a2a[ollama]
+nest-asyncio
+crewai
