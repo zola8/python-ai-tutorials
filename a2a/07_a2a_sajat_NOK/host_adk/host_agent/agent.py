@@ -89,8 +89,8 @@ class HostAgent:
 
     def create_agent(self) -> Agent:
         return Agent(
-            model=LiteLlm(model="ollama_chat/llama3.2:latest"),
-            name="Host_Agent",
+            model=LiteLlm(model="ollama_chat/gemma:7b"),
+            name="host_agent",
             instruction=self.root_instruction,
             description="This Host agent orchestrates scheduling volleyball with friends.",
             tools=[
