@@ -116,7 +116,7 @@ class AliceAgent:
     )
 
     def __init__(self):
-        self.model = ChatOllama(model="llama3.2", temperature=0.4)
+        self.model = ChatOllama(model="gemma3:latest", temperature=0.4)
 
         self.tools = [get_availability]
 

@@ -89,7 +89,7 @@ class HostAgent:
 
     def create_agent(self) -> Agent:
         return Agent(
-            model=LiteLlm(model="ollama_chat/gemma:7b"),
+            model=LiteLlm(model="ollama_chat/gemma3:latest"),
             name="host_agent",
             instruction=self.root_instruction,
             description="This Host agent orchestrates scheduling volleyball with friends.",
@@ -170,7 +170,7 @@ class HostAgent:
                     "updates": "The host agent is thinking...",
                 }
 
-    async def send_message(self, agent_name: str, task: str, tool_context: ToolContext):
+    async def send_message(self, agent_name: str, task: str, tool_context: ToolContext) -> list:
         """Sends a task to a remote friend agent."""
         if agent_name not in self.remote_agent_connections:
             raise ValueError(f"Agent {agent_name} not found")
@@ -243,6 +243,7 @@ def _get_initialized_host_agent_sync():
                 "This can happen if an event loop is already running (e.g., in Jupyter). "
                 "Consider initializing HostAgent within an async function in your application."
             )
+            return None
         else:
             raise
 
