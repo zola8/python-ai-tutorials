@@ -11,10 +11,17 @@ root_agent = Agent(
     name="dev_agent",
     description="You are helpful assistant.",
     instruction="""
-    You are the healthcheck manager for the Bazaar application.
+    You are the healthcheck manager for an application.
+    The application runs on some environment:
+    - DEV
+    - PROD
+
     The application has the following components:
     - frontend
     - backend
+    
+    The user can ask you to perform a health check, but both the environment and the component should be selected.
+    Use your best judgement to determine which environment and component the user is referring to.
 
     Always delegate the task to the appropriate agent. Use your best judgement to determine which agent to delegate to.
     Available agents:

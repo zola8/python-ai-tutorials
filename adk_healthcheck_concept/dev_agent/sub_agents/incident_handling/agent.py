@@ -2,15 +2,21 @@ import uuid
 
 from google.adk.agents import Agent
 
+from ...tools.tools import HealthcheckContent
 
-def create_incident_ticket(issue: str) -> dict:
-    """Creates an incident ticket about an issue"""
+
+def create_incident_ticket(healthcheck_status: HealthcheckContent) -> dict:
+    """
+    Creates an incident ticket about an issue.
+
+    Args:
+        healthcheck_status (HealthcheckContent): The status report from the healthcheck.
+    """
     result = {
-        "status": "incident ticket created",
         "ticket_number": str(uuid.uuid4()),
-        "issue": issue,
+        "issue": healthcheck_status,
     }
-    print(f"--- Tool: create_incident_ticket called ---\n", result)
+    print(f"---Incident ticket created ---\n", result)
 
     return result
 
@@ -20,7 +26,7 @@ incident_handling_agent = Agent(
     model="gemini-2.0-flash",
     description="An agent which handling incidents when a component has issues",
     instruction="""
-    You are an incident handling agent in the Bazaar project.
+    You are an incident handling agent in a project.
     
     When a project component has issues, your tasks are:
     - create an incident ticket
