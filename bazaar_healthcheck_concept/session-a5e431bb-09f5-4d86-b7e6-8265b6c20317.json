@@ -1,0 +1,279 @@
+{
+  "id": "a5e431bb-09f5-4d86-b7e6-8265b6c20317",
+  "appName": "dev_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "hello, can you check the backend, please?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "b07048e3-c0d5-42cf-a1c8-0b77bced39ce",
+      "timestamp": 1756886916.423047
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-e3bb1372-2a7f-4c4b-9f9e-c55cc1150ee8",
+              "args": {},
+              "name": "healthcheck_backend"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 4,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 4
+          }
+        ],
+        "promptTokenCount": 332,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 332
+          }
+        ],
+        "totalTokenCount": 336
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "dev_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "e009ef29-7474-4404-8d06-2f14bdc5fc26",
+      "timestamp": 1756886916.424859
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-e3bb1372-2a7f-4c4b-9f9e-c55cc1150ee8",
+              "name": "healthcheck_backend",
+              "response": {
+                "status_backend": {
+                  "text": "Build failed due to unit test",
+                  "severity": "high"
+                }
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "dev_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "58e1951a-ee71-4d01-99c6-07e06dd3dee7",
+      "timestamp": 1756886918.711231
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I've checked the backend and it appears there's a high severity issue: \"Build failed due to unit test\". I will transfer this to the incident handling agent.\n"
+          },
+          {
+            "functionCall": {
+              "id": "adk-6a6ee7ad-a76c-4299-a953-3279d682d970",
+              "args": {
+                "agent_name": "incident_handling_agent"
+              },
+              "name": "transfer_to_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 49,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 49
+          }
+        ],
+        "promptTokenCount": 352,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 352
+          }
+        ],
+        "totalTokenCount": 401
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "dev_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "16a77805-a833-4144-ad41-30be0b969951",
+      "timestamp": 1756886918.716117
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-6a6ee7ad-a76c-4299-a953-3279d682d970",
+              "name": "transfer_to_agent",
+              "response": {
+                "result": null
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "dev_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "transferToAgent": "incident_handling_agent",
+        "requestedAuthConfigs": {}
+      },
+      "id": "c818f1ac-85c9-44d2-bd2c-bc86ba3cceb2",
+      "timestamp": 1756886921.572588
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-4f1b70f4-75dc-489c-a8dd-8d2a0b36849c",
+              "args": {
+                "issue": "Build failed due to unit test"
+              },
+              "name": "create_incident_ticket"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 12,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 12
+          }
+        ],
+        "promptTokenCount": 459,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 459
+          }
+        ],
+        "totalTokenCount": 471
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "incident_handling_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "7611d3d7-d970-4069-880b-9238e35fffde",
+      "timestamp": 1756886921.576042
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-4f1b70f4-75dc-489c-a8dd-8d2a0b36849c",
+              "name": "create_incident_ticket",
+              "response": {
+                "status": "incident ticket created",
+                "ticket_number": "d0f12b87-423e-4d35-bfc8-fb60fd51174c",
+                "issue": "Build failed due to unit test"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "incident_handling_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "a4938030-14af-4906-84ae-43cb0836ea67",
+      "timestamp": 1756886923.896873
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "OK. I've created an incident ticket for the build failure due to unit tests. The ticket number is d0f12b87-423e-4d35-bfc8-fb60fd51174c.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 57,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 57
+          }
+        ],
+        "promptTokenCount": 523,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 523
+          }
+        ],
+        "totalTokenCount": 580
+      },
+      "invocationId": "e-b2887d63-6ab9-4617-b59f-a39dda832a7c",
+      "author": "incident_handling_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "4f556165-6c70-43f8-a1d9-19ab6cb1379f",
+      "timestamp": 1756886923.904003
+    }
+  ],
+  "lastUpdateTime": 1756886923.904003
+}
