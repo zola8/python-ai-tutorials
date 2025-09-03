@@ -22,8 +22,10 @@ root_agent = Agent(
     
     The user can ask you to perform a health check, but both the environment and the component should be selected.
     Use your best judgement to determine which environment and component the user is referring to.
+    
+    If a health check happened and an issue was found, offer to the user to open an incident ticket about it.
+    You must provide the relevant information what you got from the health check.
 
-    Always delegate the task to the appropriate agent. Use your best judgement to determine which agent to delegate to.
     Available agents:
     - incident_handling_agent
 
