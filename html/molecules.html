@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Visualization Gallery</title>
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .molecules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .molecule-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .molecule-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .molecule-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .molecule-viewer {
+            height: 300px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+
+        .molecule-info {
+            padding: 20px;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .properties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .property-tag {
+            background: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .controls {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .controls h2 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .control-group label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .control-group select, .control-group input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .control-group button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .control-group button:hover {
+            background: #764ba2;
+        }
+
+        .custom-viewer {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        #customViewer {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .molecules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Interactive Molecular Visualization</h1>
+            <p>Explore the fascinating world of molecules in 3D</p>
+        </div>
+
+        <div class="controls">
+            <h2>Custom Molecule Viewer</h2>
+            <div class="control-group">
+                <label>PDB ID:</label>
+                <input type="text" id="pdbInput" placeholder="e.g., 1A1U" value="1A1U">
+                <label>Style:</label>
+                <select id="styleSelect">
+                    <option value="cartoon">Cartoon</option>
+                    <option value="stick">Stick</option>
+                    <option value="sphere">Sphere</option>
+                    <option value="line">Line</option>
+                    <option value="surface">Surface</option>
+                </select>
+                <button onclick="loadCustomMolecule()">Load Molecule</button>
+            </div>
+            <div class="custom-viewer">
+                <div id="customViewer"></div>
+            </div>
+        </div>
+
+        <div class="molecules-grid">
+            <div class="molecule-card">
+                <div class="molecule-header">Water (H₂O)</div>
+                <div class="molecule-viewer" id="water-viewer"></div>
+                <div class="molecule-info">
+                    <div class="description">The simplest and most essential molecule for life. Water's polar nature makes it an excellent solvent.</div>
+                    <div class="properties">
+                        <span class="property-tag">Polar</span>
+                        <span class="property-tag">Bent geometry</span>
+                        <span class="property-tag">105° bond angle</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="molecule-card">
+                <div class="molecule-header">Caffeine</div>
+                <div class="molecule-viewer" id="caffeine-viewer"></div>
+                <div class="molecule-info">
+                    <div class="description">A stimulant found in coffee, tea, and many soft drinks. Caffeine blocks adenosine receptors in the brain.</div>
+                    <div class="properties">
+                        <span class="property-tag">Alkaloid</span>
+                        <span class="property-tag">Stimulant</span>
+                        <span class="property-tag">Planar rings</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="molecule-card">
+                <div class="molecule-header">Glucose</div>
+                <div class="molecule-viewer" id="glucose-viewer"></div>
+                <div class="molecule-info">
+                    <div class="description">The primary source of energy for living organisms. Glucose is a simple sugar (monosaccharide).</div>
+                    <div class="properties">
+                        <span class="property-tag">Sugar</span>
+                        <span class="property-tag">6-carbon ring</span>
+                        <span class="property-tag">Water-soluble</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="molecule-card">
+                <div class="molecule-header">Insulin (PDB: 1A1U)</div>
+                <div class="molecule-viewer" id="insulin-viewer"></div>
+                <div class="molecule-info">
+                    <div class="description">A protein hormone that regulates blood glucose levels. Essential for diabetes treatment.</div>
+                    <div class="properties">
+                        <span class="property-tag">Protein</span>
+                        <span class="property-tag">Hormone</span>
+                        <span class="property-tag">51 amino acids</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Powered by 3Dmol.js • Interactive 3D molecular visualization</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the custom viewer
+        let customViewer;
+        document.addEventListener('DOMContentLoaded', function() {
+            customViewer = $3Dmol.createViewer('customViewer', {
+                backgroundColor: 'white'
+            });
+            loadCustomMolecule();
+        });
+
+        function loadCustomMolecule() {
+            const pdbId = document.getElementById('pdbInput').value.trim();
+            const style = document.getElementById('styleSelect').value;
+
+            customViewer.clear();
+
+            $3Dmol.download('pdb:' + pdbId, customViewer, {}, function() {
+                switch(style) {
+                    case 'cartoon':
+                        customViewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+                        break;
+                    case 'stick':
+                        customViewer.setStyle({}, {stick: {}});
+                        break;
+                    case 'sphere':
+                        customViewer.setStyle({}, {sphere: {}});
+                        break;
+                    case 'line':
+                        customViewer.setStyle({}, {line: {}});
+                        break;
+                    case 'surface':
+                        customViewer.addSurface($3Dmol.SurfaceType.VDW, {
+                            opacity: 0.8,
+                            color: 'white'
+                        });
+                        break;
+                }
+                customViewer.zoomTo();
+                customViewer.render();
+            });
+        }
+
+        // Water molecule
+        const waterViewer = $3Dmol.createViewer('water-viewer', {
+            backgroundColor: 'white'
+        });
+        waterViewer.addModel(`
+            3
+            Water molecule
+            O      0.000000    0.000000    0.117300
+            H      0.000000    0.757000   -0.469200
+            H      0.000000   -0.757000   -0.469200
+        `, 'xyz');
+        waterViewer.setStyle({}, {stick: {colorscheme: 'Jmol'}});
+        waterViewer.zoomTo();
+        waterViewer.render();
+
+        // Caffeine molecule
+        const caffeineViewer = $3Dmol.createViewer('caffeine-viewer', {
+            backgroundColor: 'white'
+        });
+        caffeineViewer.addModel(`
+            24
+            Caffeine molecule
+            C        0.000000    0.000000    0.000000
+            N        1.390000    0.000000    0.000000
+            C        2.090000    1.200000    0.000000
+            N        1.390000    2.390000    0.000000
+            C        0.000000    2.390000    0.000000
+            N       -0.710000    1.200000    0.000000
+            C        3.500000    1.200000    0.000000
+            O        4.100000    0.200000    0.000000
+            N        4.100000    2.390000    0.000000
+            C        5.500000    2.390000    0.000000
+            C        3.500000    3.580000    0.000000
+            C       -2.090000    1.200000    0.000000
+            O       -2.690000    0.200000    0.000000
+            N       -2.690000    2.390000    0.000000
+            C       -4.100000    2.390000    0.000000
+            C       -2.090000    3.580000    0.000000
+            C        6.200000    1.200000    0.000000
+            C        6.200000    3.580000    0.000000
+            C       -4.800000    1.200000    0.000000
+            C       -4.800000    3.580000    0.000000
+            O        0.000000    3.580000    0.000000
+            C        0.710000   -1.200000    0.000000
+            C       -0.710000   -1.200000    0.000000
+            C        1.390000   -2.390000    0.000000
+        `, 'xyz');
+        caffeineViewer.setStyle({}, {stick: {colorscheme: 'Jmol'}});
+        caffeineViewer.zoomTo();
+        caffeineViewer.render();
+
+        // Glucose molecule
+        const glucoseViewer = $3Dmol.createViewer('glucose-viewer', {
+            backgroundColor: 'white'
+        });
+        glucoseViewer.addModel(`
+            24
+            Glucose molecule
+            C      0.000000    0.000000    0.000000
+            C      1.529000    0.000000    0.000000
+            C      2.229000    1.200000    0.000000
+            C      1.529000    2.400000    0.000000
+            C      0.000000    2.400000    0.000000
+            C     -0.700000    1.200000    0.000000
+            O      2.229000    3.600000    0.000000
+            O      2.229000   -1.200000    0.000000
+            O      0.000000   -1.200000    0.000000
+            O     -2.100000    1.200000    0.000000
+            O     -0.700000    3.600000    0.000000
+            H      0.000000    0.000000    1.100000
+            H      1.929000   -0.500000    0.900000
+            H      1.929000   -0.500000   -0.900000
+            H      3.300000    1.200000    0.000000
+            H      2.929000    3.600000    0.000000
+            H      2.929000   -1.200000    0.000000
+            H     -0.500000   -1.200000    0.900000
+            H     -0.500000   -1.200000   -0.900000
+            H     -2.500000    0.400000    0.000000
+            H     -2.500000    2.000000    0.000000
+            H     -0.300000    4.200000    0.900000
+            H     -0.300000    4.200000   -0.900000
+            H     -0.700000    0.700000    0.900000
+        `, 'xyz');
+        glucoseViewer.setStyle({}, {stick: {colorscheme: 'Jmol'}});
+        glucoseViewer.zoomTo();
+        glucoseViewer.render();
+
+        // Insulin molecule from PDB
+        const insulinViewer = $3Dmol.createViewer('insulin-viewer', {
+            backgroundColor: 'white'
+        });
+        $3Dmol.download('pdb:1A1U', insulinViewer, {}, function() {
+            insulinViewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+            insulinViewer.zoomTo();
+            insulinViewer.render();
+        });
+    </script>
+</body>
+</html>
