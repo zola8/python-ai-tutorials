@@ -1,0 +1,114 @@
+Security & AI Governance: Reducing Risks in AI Systems
+https://www.youtube.com/watch?v=4QXtObc61Lw
+
+Protecting Data in AI: Strategies for Security & Governance
+https://www.youtube.com/watch?v=LyfG7SGRiZA
+
+
+--------------------------------------
+
+risk = system will do the wrong thing, give incorrect answer and damage organization/reputation/business
+
+governance policy (compliance = megfelelés) + security policy
+
+
+AI:
+    governance:
+        - responsible (gives what we expect)
+        - explainable (facts are reliable?, trace back the documentation)
+    security:
+        - vulnerabilities
+        - shadow AI (somebody created AI without approval, without authorization -> data leaks)
+
+CAUSE:
+    governance:
+        - self-inflicted wounds (we use bad model, we pulled from bad source, model was not trained properly)
+        - unintentional (we didn't want to make a big mess, but we did - how to guard against this?)
+        - policy violations
+        - ethical lapses
+    security:
+        - others inflicted (external/internal person)
+        - intentional (someone is trying to break into the system)
+
+DAMAGE:
+    governance:
+        - HAP (hate, abuse, profanity - our system doesn't say outrageous things that insult users)
+        - fair / unbiased
+        - doesn't drift (started true but getting later more untrue as it learns more things, stay solid)
+        - intellectual property (is somebody able to steal IP? or is there any copyrighted material? our model learn on copyright material so start using that -> law!)
+        - hallucination (make sure it doesn't just make up answer)
+        - our reputation (AI is representing us)
+    security:
+        CIA
+        - confidentiality (doesn't send sensitive information out)
+        - integrity (our system cannot be manipulated, data poisoning)
+        - availability (someone cannot do a denial of service attack)
+
+== RISK
+
+CONTROL: let's control what is happening in the system
+    governance:
+        - set of rules
+        - follow policies
+        - accountability structures (who is responsible for which part?)
+    security:
+        - prevention
+        - detection (when is our system under attack?)
+        - response
+
+MODELS:
+    governance:
+        - training (our models are trained properly, what is the source of the model)
+        - lineage (open source model? good, authentic version? or illicit copy? who has touched it along the way?)
+        - acceptable use policy
+        - intellectual property (IP) risk
+    security:
+        - prompt injection
+        - unauthorized access
+        - penetration testing
+        - posture management (the system hasn't been misconfigured)
+
+--------------------------------------
+Solution:
+    - layers of protections
+
+       (  (  ( AI ) governance protection  )    security protection  )
+                    - manage use cases
+                    - manage model
+                    - risk management
+                    - performance
+                    - compliance
+                    - lifecycle management
+                                                - discover shadows
+                                                - AI security posture management
+                                                - penetration test
+                                                - AI firewall / gateway (guardrails, look for exfiltration cases)
+                                                    checking incoming prompts
+                                                - threat monitor
+                                                - dashboard (visualize all of these)
+
+--------------------------------------
+
+models for storing structured data:
+    database
+    server
+    distributed systems
+    cloud
+    hybrid cloud
+
+
+strategies to protect data:
+    GOVERNANCE:
+        - classification of data (what kind of sensitive information do we need to be aware of)
+        - manage access
+            no direct
+            read-only
+            roles
+            least privilege
+            identity management
+        - privileged users
+            limit shared IDs
+            monitor (anomaly detection)
+
+        - encrypt data
+        - repeat all of this
