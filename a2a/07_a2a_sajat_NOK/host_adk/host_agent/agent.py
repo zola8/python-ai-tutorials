@@ -119,7 +119,6 @@ class HostAgent:
         *   **Readability:** Make sure to respond in a concise and easy to read format (bullet points are good).
         *   Each available agent represents a friend. So Bob_Agent represents Bob.
         *   When asked for which friends are available, you should return the names of the available friends (aka the agents that are active).
-        *   When get
 
         **Today's Date (YYYY-MM-DD):** {datetime.now().strftime("%Y-%m-%d")}
 
