@@ -33,3 +33,5 @@ python-a2a[ollama]
 nest-asyncio
 crewai
 yfinance
+
+pytest
