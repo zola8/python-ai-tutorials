@@ -1,33 +1,7 @@
-from itertools import combinations, permutations, count, cycle, repeat, accumulate, batched
+from itertools import combinations, permutations, product
 
 
 # https://docs.python.org/3/library/itertools.html#module-itertools
-
-def print_count():
-    print("\n--- count ---")
-    # count(10) → 10 11 12 13 14 ...
-    for c in count(10, 2):
-        if c == 20:
-            break
-        print(c)
-
-
-def print_cycle():
-    print("\n--- cycle ---")
-    i = 0
-    # cycle('ABCD') → A B C D A B C D A B C D ...
-    for c in cycle('ABCD'):
-        i += 1
-        if i == 12:
-            break
-        print(c)
-
-
-def print_repeat():
-    print("\n--- repeat ---")
-    # repeat(10, 3) → 10 10 10
-    for c in repeat('A', 3):
-        print(c)
 
 
 def print_combinations():
@@ -68,32 +42,21 @@ def print_permutations():
     # ('D', 'B')
     # ('D', 'C')
 
-def print_accumulate():
-    print("\n--- accumulate ---")
-    num_list = [1,2,3,4,5]
-    #     accumulate([1,2,3,4,5]) → 1 3 6 10 15
-    for c in accumulate(num_list):
-        print(c)
 
-    print("sum:", sum(num_list))
-
-
-
-def print_batched():
-    print("\n--- batched ---")
-    # batched('ABCDEFG', n=2) → AB CD EF G
-    for c in batched('ABCDEFG', 2):
-        print(c)
-
+def print_variation():
+    # product('ABCD', 'xy') → Ax Ay Bx By Cx Cy Dx Dy
+    # product(range(2), repeat=3) → 000 001 010 011 100 101 110 111
+    print("\n--- product (variation) ---")
+    print(list(product('ABCD', repeat=2)))
+    # AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
+    #     Öt betűből alkotható hárombetűs "szavak" egy-egy (ismétléses) variációt alkotnak.
+    # A halmaz elemiből k darabot sorban egymás után felírunk, akkor variációnak nevezzük az így kapott sorozatot.
+    # Ha az elemeket ki is emeljük a halmazból, akkor lesz a variáció ismétlés nélküli.
 
 
 if __name__ == '__main__':
     # print_combinations()
     # print_permutations()
-    # print_count()
-    # print_cycle()
-    # print_repeat()
-    # print_accumulate()
-    print_batched()
+    print_variation()
 
     print()
