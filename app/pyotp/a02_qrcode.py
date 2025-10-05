@@ -1,7 +1,7 @@
 import pyotp
 import qrcode
 
-from app.auth.a01_pyotp import totp
+from a01_pyotp import totp
 
 key = "mysupersecretkey"
 
