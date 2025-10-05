@@ -36,3 +36,5 @@ yfinance
 
 pytest
 duckdb
+pyotp
+qrcode
