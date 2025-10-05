@@ -35,3 +35,4 @@ crewai
 yfinance
 
 pytest
+duckdb
